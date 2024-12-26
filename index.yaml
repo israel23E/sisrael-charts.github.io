@@ -1,0 +1,300 @@
+apiVersion: v1
+entries:
+  bbsim:
+  - apiVersion: v1
+    appVersion: 1.16.5
+    created: "2024-12-26T21:12:11.485057093+02:00"
+    description: Broadband Simulator
+    digest: f224e2ee1df010ced82cbc7a718b63a9c520d03e48d23804e85c04a4725fda27
+    icon: https://guide.opencord.org/logos/cord.svg
+    name: bbsim
+    urls:
+    - https://israel23e.github.io/sisrael-charts.github.io/bbsim-4.8.10.tgz
+    version: 4.8.10
+  voltha-infra:
+  - apiVersion: v2
+    appVersion: "2.11"
+    created: "2024-12-26T21:12:11.518878528+02:00"
+    dependencies:
+    - condition: onos-classic.enabled
+      name: onos-classic
+      repository: https://charts.onosproject.org
+      version: 0.1.29
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.0.10
+    - condition: bbsim-sadis-server.enabled
+      name: bbsim-sadis-server
+      repository: file://../bbsim-sadis-server
+      version: 0.3.2
+    - condition: etcd.enabled
+      name: etcd
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.5.11
+    - condition: kafka.enabled
+      name: kafka
+      repository: https://charts.bitnami.com/bitnami
+      version: 20.0.2
+    - condition: radius.enabled
+      name: freeradius
+      repository: https://charts.opencord.org
+      version: 1.0.2
+    - condition: voltha-tracing.enabled
+      name: voltha-tracing
+      repository: file://../voltha-tracing
+      version: 1.0.4
+    - condition: efk.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: 7.10.1
+    - condition: efk.enabled
+      name: kibana
+      repository: https://helm.elastic.co
+      version: 7.10.1
+    - condition: efk.enabled
+      name: fluentd-elasticsearch
+      repository: https://kiwigrid.github.io
+      version: 9.6.2
+    description: A Helm chart to install the required infrastructure for VOLTHA
+    digest: 5fd9cb749da15a6764886a2af33207481858f46f589c77cf4a215eb393419ae9
+    home: https://www.opennetworking.org/voltha
+    icon: https://guide.opencord.org/logos/voltha.svg
+    keywords:
+    - onf
+    - voltha
+    - onos
+    - radius
+    - sadis-server
+    maintainers:
+    - email: info@opennetworking.org
+      name: Open Networking Foundation
+      url: https://www.opennetworking.org
+    name: voltha-infra
+    urls:
+    - https://israel23e.github.io/sisrael-charts.github.io/voltha-infra-2.12.0.tgz
+    version: 2.12.0
+  voltha-stack:
+  - apiVersion: v2
+    appVersion: 2.12.12
+    created: "2024-12-26T21:12:11.53005547+02:00"
+    dependencies:
+    - condition: voltha.enabled
+      name: voltha
+      repository: file://../voltha
+      version: 2.12.15
+    - condition: voltha-adapter-openonu.enabled
+      name: voltha-adapter-openonu
+      repository: file://../voltha-adapter-openonu
+      version: 2.12.2
+    - condition: voltha-adapter-openolt.enabled
+      name: voltha-adapter-openolt
+      repository: file://../voltha-adapter-openolt
+      version: 2.12.6
+    - condition: voltha-go-controller.enabled
+      name: voltha-go-controller
+      repository: file://../voltha-go-controller
+      version: 0.1.3
+    description: A Helm chart to install a VOLTHA stack on existing infrastructure
+    digest: a52081267383dfcb65d7f43716c9cf7ab6126b6666012bfbd9d6ca5210540bd1
+    home: https://www.opennetworking.org/voltha
+    icon: https://guide.opencord.org/logos/voltha.svg
+    keywords:
+    - onf
+    - voltha
+    - openolt-adapters
+    - openonu-adapters
+    maintainers:
+    - email: info@opennetworking.org
+      name: Open Networking Foundation
+      url: https://www.opennetworking.org
+    name: voltha-stack
+    urls:
+    - https://israel23e.github.io/sisrael-charts.github.io/voltha-stack-2.12.12.tgz
+    version: 2.12.12
+  - apiVersion: v2
+    appVersion: 2.12.11
+    created: "2024-12-26T21:12:11.52573092+02:00"
+    dependencies:
+    - condition: voltha.enabled
+      name: voltha
+      repository: file://../voltha
+      version: 2.12.15
+    - condition: voltha-adapter-openonu.enabled
+      name: voltha-adapter-openonu
+      repository: file://../voltha-adapter-openonu
+      version: 2.12.2
+    - condition: voltha-adapter-openolt.enabled
+      name: voltha-adapter-openolt
+      repository: file://../voltha-adapter-openolt
+      version: 2.12.6
+    - condition: voltha-go-controller.enabled
+      name: voltha-go-controller
+      repository: file://../voltha-go-controller
+      version: 0.1.3
+    description: A Helm chart to install a VOLTHA stack on existing infrastructure
+    digest: 057dc670f68673edd203f4280a2e1ad7c27da7808e14449c6d6e73cd5be4d6e4
+    home: https://www.opennetworking.org/voltha
+    icon: https://guide.opencord.org/logos/voltha.svg
+    keywords:
+    - onf
+    - voltha
+    - openolt-adapters
+    - openonu-adapters
+    maintainers:
+    - email: info@opennetworking.org
+      name: Open Networking Foundation
+      url: https://www.opennetworking.org
+    name: voltha-stack
+    urls:
+    - https://israel23e.github.io/sisrael-charts.github.io/voltha-stack-2.12.11.tgz
+    version: 2.12.11
+  - apiVersion: v2
+    appVersion: 2.12.10
+    created: "2024-12-26T21:12:11.522791021+02:00"
+    dependencies:
+    - condition: voltha.enabled
+      name: voltha
+      repository: file://../voltha
+      version: 2.12.15
+    - condition: voltha-adapter-openonu.enabled
+      name: voltha-adapter-openonu
+      repository: file://../voltha-adapter-openonu
+      version: 2.12.2
+    - condition: voltha-adapter-openolt.enabled
+      name: voltha-adapter-openolt
+      repository: file://../voltha-adapter-openolt
+      version: 2.12.6
+    - condition: voltha-go-controller.enabled
+      name: voltha-go-controller
+      repository: file://../voltha-go-controller
+      version: 0.1.3
+    description: A Helm chart to install a VOLTHA stack on existing infrastructure
+    digest: 655c55006ba3345c0e49f512b3f45e6add1de9f3bc5890efa746b28185ef0a60
+    home: https://www.opennetworking.org/voltha
+    icon: https://guide.opencord.org/logos/voltha.svg
+    keywords:
+    - onf
+    - voltha
+    - openolt-adapters
+    - openonu-adapters
+    maintainers:
+    - email: info@opennetworking.org
+      name: Open Networking Foundation
+      url: https://www.opennetworking.org
+    name: voltha-stack
+    urls:
+    - https://israel23e.github.io/sisrael-charts.github.io/voltha-stack-2.12.10.tgz
+    version: 2.12.10
+  - apiVersion: v2
+    appVersion: 2.12.9
+    created: "2024-12-26T21:12:11.541614494+02:00"
+    dependencies:
+    - condition: voltha.enabled
+      name: voltha
+      repository: file://../voltha
+      version: 2.12.15
+    - condition: voltha-adapter-openonu.enabled
+      name: voltha-adapter-openonu
+      repository: file://../voltha-adapter-openonu
+      version: 2.12.2
+    - condition: voltha-adapter-openolt.enabled
+      name: voltha-adapter-openolt
+      repository: file://../voltha-adapter-openolt
+      version: 2.12.6
+    - condition: voltha-go-controller.enabled
+      name: voltha-go-controller
+      repository: file://../voltha-go-controller
+      version: 0.1.3
+    description: A Helm chart to install a VOLTHA stack on existing infrastructure
+    digest: 353fe5fce71341a18e6276930d81c029317f532a4a4f93b3e88a947037f1365f
+    home: https://www.opennetworking.org/voltha
+    icon: https://guide.opencord.org/logos/voltha.svg
+    keywords:
+    - onf
+    - voltha
+    - openolt-adapters
+    - openonu-adapters
+    maintainers:
+    - email: info@opennetworking.org
+      name: Open Networking Foundation
+      url: https://www.opennetworking.org
+    name: voltha-stack
+    urls:
+    - https://israel23e.github.io/sisrael-charts.github.io/voltha-stack-2.12.9.tgz
+    version: 2.12.9
+  - apiVersion: v2
+    appVersion: 2.12.8
+    created: "2024-12-26T21:12:11.538406951+02:00"
+    dependencies:
+    - condition: voltha.enabled
+      name: voltha
+      repository: file://../voltha
+      version: 2.12.15
+    - condition: voltha-adapter-openonu.enabled
+      name: voltha-adapter-openonu
+      repository: file://../voltha-adapter-openonu
+      version: 2.12.2
+    - condition: voltha-adapter-openolt.enabled
+      name: voltha-adapter-openolt
+      repository: file://../voltha-adapter-openolt
+      version: 2.12.6
+    - condition: voltha-go-controller.enabled
+      name: voltha-go-controller
+      repository: file://../voltha-go-controller
+      version: 0.1.3
+    description: A Helm chart to install a VOLTHA stack on existing infrastructure
+    digest: 535dcc52b4837d7f81ab087091d4fc4cd96ee2fd1d758932703f3642a5be9aac
+    home: https://www.opennetworking.org/voltha
+    icon: https://guide.opencord.org/logos/voltha.svg
+    keywords:
+    - onf
+    - voltha
+    - openolt-adapters
+    - openonu-adapters
+    maintainers:
+    - email: info@opennetworking.org
+      name: Open Networking Foundation
+      url: https://www.opennetworking.org
+    name: voltha-stack
+    urls:
+    - https://israel23e.github.io/sisrael-charts.github.io/voltha-stack-2.12.8.tgz
+    version: 2.12.8
+  - apiVersion: v2
+    appVersion: 2.12.7
+    created: "2024-12-26T21:12:11.533856882+02:00"
+    dependencies:
+    - condition: voltha.enabled
+      name: voltha
+      repository: file://../voltha
+      version: 2.12.15
+    - condition: voltha-adapter-openonu.enabled
+      name: voltha-adapter-openonu
+      repository: file://../voltha-adapter-openonu
+      version: 2.12.2
+    - condition: voltha-adapter-openolt.enabled
+      name: voltha-adapter-openolt
+      repository: file://../voltha-adapter-openolt
+      version: 2.12.6
+    - condition: voltha-go-controller.enabled
+      name: voltha-go-controller
+      repository: file://../voltha-go-controller
+      version: 0.1.3
+    description: A Helm chart to install a VOLTHA stack on existing infrastructure
+    digest: a646efd4640aa02cc0ffcc079e279c749a588dc2bf2034c98473739174bb4166
+    home: https://www.opennetworking.org/voltha
+    icon: https://guide.opencord.org/logos/voltha.svg
+    keywords:
+    - onf
+    - voltha
+    - openolt-adapters
+    - openonu-adapters
+    maintainers:
+    - email: info@opennetworking.org
+      name: Open Networking Foundation
+      url: https://www.opennetworking.org
+    name: voltha-stack
+    urls:
+    - https://israel23e.github.io/sisrael-charts.github.io/voltha-stack-2.12.7.tgz
+    version: 2.12.7
+generated: "2024-12-26T21:12:11.484172436+02:00"
